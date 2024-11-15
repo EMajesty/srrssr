@@ -72,6 +72,7 @@ fn truncate(text: &str, max_length: usize) -> String {
     if text.len() <= max_length {
         text.to_string()
     } else {
-        format!("{}...", &text[..max_length - 3])
+        let result: String = text.chars().take(max_length - 3).collect();
+        format!("{}...", result)
     }
 }
